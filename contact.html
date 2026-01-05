@@ -10,6 +10,241 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <style>
+        /* Internal CSS for small screen fixes */
+        @media (max-width: 768px) {
+            /* Fix contact-info-card on small screens */
+            .contact-info-card {
+                padding: 25px 20px !important;
+                margin: 0 -10px;
+                width: calc(100% + 20px);
+                border-radius: 15px !important;
+            }
+            
+            .contact-title {
+                font-size: 1.6rem !important;
+                text-align: center;
+                margin-bottom: 20px !important;
+            }
+            
+            .contact-intro {
+                text-align: center;
+                font-size: 0.95rem !important;
+                margin-bottom: 25px !important;
+            }
+            
+            .contact-details-list {
+                gap: 20px !important;
+            }
+            
+            .contact-detail-item {
+                flex-direction: column !important;
+                text-align: center;
+                gap: 15px !important;
+                padding: 15px;
+                background: rgba(248, 249, 250, 0.5);
+                border-radius: 12px;
+            }
+            
+            .contact-detail-icon {
+                margin: 0 auto !important;
+                width: 55px !important;
+                height: 55px !important;
+                font-size: 1.3rem !important;
+            }
+            
+            .contact-detail-content h3 {
+                font-size: 1.2rem !important;
+                margin-bottom: 8px !important;
+            }
+            
+            .contact-detail-content p {
+                font-size: 0.95rem !important;
+                margin-bottom: 5px !important;
+            }
+            
+            .contact-note {
+                font-size: 0.85rem !important;
+                line-height: 1.4 !important;
+            }
+            
+            .contact-action {
+                margin-top: 25px !important;
+                padding-top: 20px;
+                border-top: 1px solid rgba(104, 6, 8, 0.1);
+            }
+            
+            .btn-large {
+                width: 100% !important;
+                padding: 14px 20px !important;
+                font-size: 1rem !important;
+            }
+            
+            .action-note {
+                margin-top: 12px !important;
+                font-size: 0.85rem !important;
+            }
+            
+            /* Fix map-container on small screens */
+            .map-container {
+                gap: 25px !important;
+                margin-top: 30px;
+            }
+            
+            .map-title {
+                font-size: 1.6rem !important;
+                text-align: center;
+                margin-bottom: 15px !important;
+            }
+            
+            .map-frame {
+                border-radius: 15px !important;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            iframe {
+                height: 300px !important;
+            }
+            
+            .map-overlay {
+                position: relative !important;
+                bottom: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                margin-top: -5px;
+                border-radius: 0 0 15px 15px !important;
+                padding: 15px !important;
+            }
+            
+            .map-info h3 {
+                font-size: 1.1rem !important;
+                margin-bottom: 8px !important;
+                justify-content: center;
+            }
+            
+            .map-info p {
+                font-size: 0.9rem !important;
+                margin-bottom: 12px !important;
+            }
+            
+            .btn-small {
+                padding: 8px 25px !important;
+                font-size: 0.85rem !important;
+            }
+            
+            /* Fix office-hours card on small screens */
+            .office-hours {
+                padding: 20px !important;
+                border-radius: 15px !important;
+                margin-top: 10px;
+            }
+            
+            .office-hours h3 {
+                font-size: 1.3rem !important;
+                margin-bottom: 18px !important;
+                justify-content: center;
+            }
+            
+            .office-hours ul {
+                padding: 0;
+            }
+            
+            .office-hours li {
+                flex-direction: column !important;
+                text-align: center;
+                padding: 12px 0 !important;
+                gap: 5px;
+            }
+            
+            .office-hours li span {
+                display: block;
+                margin-bottom: 3px;
+                font-size: 0.95rem;
+            }
+            
+            .office-hours li:last-child {
+                padding-bottom: 0 !important;
+            }
+            
+            /* Fix contact-page-content layout */
+            .contact-page-content {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 40px !important;
+            }
+            
+            /* CTA section adjustments */
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .cta-buttons .btn {
+                width: 100% !important;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            /* Extra small screen adjustments */
+            .contact-info-card {
+                padding: 20px 15px !important;
+                margin: 0 -10px;
+                width: calc(100% + 20px);
+            }
+            
+            .contact-title {
+                font-size: 1.4rem !important;
+            }
+            
+            .contact-detail-item {
+                padding: 12px;
+            }
+            
+            .contact-detail-icon {
+                width: 50px !important;
+                height: 50px !important;
+            }
+            
+            .office-hours li {
+                font-size: 0.9rem;
+            }
+            
+            iframe {
+                height: 250px !important;
+            }
+            
+            .map-info h3 {
+                font-size: 1rem !important;
+            }
+        }
+        
+        /* Additional specific fixes for contact page elements */
+        .contact-page {
+            padding: 40px 0 !important;
+        }
+        
+        .contact-page .container {
+            padding: 0 15px !important;
+        }
+        
+        /* Ensure proper spacing on all screens */
+        .contact-detail-content h3 {
+            color: var(--primary-color) !important;
+            margin-bottom: 8px;
+        }
+        
+        .contact-detail-content p {
+            margin-bottom: 5px;
+            line-height: 1.5;
+        }
+        
+        .office-hours li span {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+    </style>
 </head>
 <body>
     <!-- Header & Navigation -->
