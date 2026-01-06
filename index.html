@@ -10,6 +10,127 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <style>
+        /* Internal CSS for Service Images */
+        .service-icon {
+            width: 100% !important;
+            height: 180px !important;
+            border-radius: 15px 15px 0 0 !important;
+            background-color: transparent !important;
+            color: transparent !important;
+            margin: -30px -30px 20px -30px !important;
+            font-size: 0 !important;
+            overflow: hidden !important;
+            position: relative !important;
+        }
+        
+        .service-icon img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            transition: transform 0.5s ease !important;
+        }
+        
+        .service-card:hover .service-icon img {
+            transform: scale(1.05) !important;
+        }
+        
+        .service-card {
+            padding-top: 0 !important;
+            overflow: hidden !important;
+        }
+        
+        .service-card h3 {
+            margin-top: 10px !important;
+            margin-bottom: 15px !important;
+        }
+        
+        .service-card p {
+            margin-bottom: 0 !important;
+        }
+        
+        /* Responsive adjustments for service images */
+        @media (max-width: 768px) {
+            .service-icon {
+                height: 160px !important;
+                margin: -25px -25px 15px -25px !important;
+            }
+            
+            .service-card {
+                padding: 25px !important;
+                padding-top: 0 !important;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .service-icon {
+                height: 140px !important;
+                margin: -20px -20px 15px -20px !important;
+            }
+            
+            .service-card {
+                padding: 20px !important;
+                padding-top: 0 !important;
+            }
+            
+            .service-card h3 {
+                font-size: 1.3rem !important;
+            }
+        }
+
+        /* Simple zoom-out effect for service images */
+        .service-icon {
+            width: 100% !important;
+            height: 180px !important;
+            border-radius: 15px 15px 0 0 !important;
+            margin: -30px -30px 20px -30px !important;
+            overflow: hidden !important;
+            position: relative !important;
+        }
+        
+        .service-icon img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            transition: transform 0.7s ease !important;
+            transform: scale(1.15) !important; /* Start zoomed in */
+        }
+        
+        .service-card:hover .service-icon img {
+            transform: scale(1) !important; /* Zoom out to normal on hover */
+        }
+        
+        .service-card {
+            transition: transform 0.3s ease !important;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px) !important;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .service-icon {
+                height: 160px !important;
+                margin: -25px -25px 15px -25px !important;
+            }
+            
+            .service-icon img {
+                transform: scale(1.1) !important;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .service-icon {
+                height: 140px !important;
+                margin: -20px -20px 15px -20px !important;
+            }
+            
+            .service-icon img {
+                transform: scale(1.05) !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -17,10 +138,11 @@
         <div class="container">
             <div class="logo-container">
                 <div class="logo">
-                    <span class="logo-icon">AIL</span>
+                  <img src="assets/lg.png" alt="AIL logo" class="logo-icon">
+                    <!-- <span class="logo-icon">AIL</span> -->
                     <div class="logo-text">
-                        <h1>Affiliate Innovators</h1>
-                        <p>Limited</p>
+                        <h1>Affiliate Innovators Limited</h1>
+                        <!-- <p>Limited</p> -->
                     </div>
                 </div>
             </div>
@@ -49,7 +171,7 @@
             <div class="hero-content">
                 <h2 class="hero-title">Transforming Businesses with <span class="highlight">Innovative Tech Solutions</span></h2>
                 <p class="hero-text">We provide cutting-edge technology services to help businesses in Tamale and beyond thrive in the digital era. From web development to tech training, we've got you covered.</p>
-                <a href="https://forms.gle/example" target="_blank" class="btn btn-primary">Get Started Today</a>
+                <a href="#" target="_blank" class="btn btn-primary">Get Started Today</a>
             </div>
         </div>
     </section>
@@ -89,7 +211,7 @@
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-code"></i>
+                        <img src="assets/web.jpg" alt="Website Development">
                     </div>
                     <h3>Website Development</h3>
                     <p>Custom, responsive websites designed to enhance your online presence and drive business growth.</p>
@@ -97,7 +219,7 @@
                 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
+                        <img src="assets/mobile.jpg" alt="Mobile App Development">
                     </div>
                     <h3>Mobile App Development</h3>
                     <p>Native and cross-platform mobile applications for iOS and Android to engage your customers.</p>
@@ -105,7 +227,7 @@
                 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-graduation-cap"></i>
+                        <img src="assets/train.jpg" alt="Tech Training">
                     </div>
                     <h3>Tech Training</h3>
                     <p>Comprehensive training programs in web development, programming, and digital skills.</p>
@@ -113,7 +235,7 @@
                 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-network-wired"></i>
+                        <img src="assets/networking.jpg" alt="Networking Solutions">
                     </div>
                     <h3>Networking Solutions</h3>
                     <p>Reliable network infrastructure design and implementation for businesses of all sizes.</p>
@@ -121,7 +243,7 @@
                 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-paint-brush"></i>
+                        <img src="assets/graphic.jpg" alt="Graphic Design">
                     </div>
                     <h3>Graphic Design</h3>
                     <p>Creative visual designs for branding, marketing materials, and digital media.</p>
@@ -129,11 +251,19 @@
                 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
+                        <img src="assets/software.jpg" alt="Software Development">
                     </div>
                     <h3>Software Development</h3>
                     <p>Custom software solutions tailored to your specific business requirements.</p>
                 </div>
+
+                <div class="service-card">
+                  <div class="service-icon">
+                      <img src="assets/digital.jpg" alt="Digital Marketing">
+                  </div>
+                  <h3>Digital Marketing</h3>
+                  <p>Boost your online visibility and drive targeted traffic with our comprehensive digital marketing strategies. We create data-driven campaigns across search engines, social media, and content platforms to help your business connect with the right audience and achieve measurable growth.</p>
+              </div>
             </div>
         </div>
     </section>
