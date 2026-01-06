@@ -128,7 +128,7 @@ a {
     z-index: 1000;
     padding: 15px 0;
     transition: var(--transition);
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: var(--primary-color)!important;
     backdrop-filter: blur(10px);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
@@ -149,8 +149,8 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     color: white;
     font-weight: 700;
     font-size: 1.2rem;
@@ -228,6 +228,7 @@ a {
     background-color: var(--dark-color);
     border-radius: 3px;
     transition: var(--transition);
+    
 }
 
 /* Hero Section */
@@ -1111,7 +1112,7 @@ section {
         top: 80px;
         right: -100%;
         flex-direction: column;
-        background-color: white;
+        background-color: var(--primary-color);
         width: 80%;
         max-width: 300px;
         height: calc(100vh - 80px);
