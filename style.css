@@ -151,7 +151,6 @@ a {
     justify-content: center;
     width: 70px;
     height: 70px;
-    /* background-color: var(--primary-color); */
     color: white;
     font-weight: 700;
     font-size: 1.2rem;
@@ -163,12 +162,6 @@ a {
     margin-bottom: 0;
     line-height: 1.2;
 }
-
-/* .logo-text p {
-    font-size: 0.8rem;
-    margin-bottom: 0;
-    color: var(--gray-color);
-} */
 
 .navbar {
     display: flex;
@@ -381,7 +374,9 @@ section {
     transform: scale(1.05);
 }
 
-/* Services Section */
+/* =========================================== */
+/* FIXED: Services Section with Full-Width Images */
+/* =========================================== */
 .services {
     background-color: var(--light-gray);
 }
@@ -395,13 +390,17 @@ section {
 .service-card {
     background: white;
     border-radius: 15px;
-    padding: 30px;
+    padding: 0 !important; /* REMOVED: padding: 30px; */
     text-align: center;
     transition: var(--transition);
     box-shadow: var(--shadow);
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(10px);
     background: var(--glass-bg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .service-card:hover {
@@ -409,7 +408,8 @@ section {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-.service-icon {
+/* REMOVED OLD .service-icon STYLES: */
+/* .service-icon {
     width: 70px;
     height: 70px;
     background-color: var(--primary-color);
@@ -420,6 +420,50 @@ section {
     justify-content: center;
     margin: 0 auto 20px;
     font-size: 1.8rem;
+} */
+
+/* NEW: Service Images with Zoom-Out Effect */
+.service-icon {
+    width: 100% !important;
+    height: 180px !important;
+    border-radius: 15px 15px 0 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    position: relative !important;
+    display: block !important;
+    flex-shrink: 0 !important;
+}
+
+.service-icon img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    transition: transform 0.7s ease !important;
+    transform: scale(1.15) !important; /* Start zoomed in */
+}
+
+.service-card:hover .service-icon img {
+    transform: scale(1) !important; /* Zoom out to normal on hover */
+}
+
+.service-card-content {
+    padding: 25px !important;
+    flex-grow: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.service-card h3 {
+    margin-top: 0 !important;
+    margin-bottom: 15px !important;
+    font-size: 1.3rem !important;
+}
+
+.service-card p {
+    margin-bottom: 0 !important;
+    flex-grow: 1 !important;
 }
 
 /* Testimonials */
@@ -1024,7 +1068,9 @@ section {
     animation: fadeInUp 0.8s ease;
 }
 
-/* Responsive Styles */
+/* =========================================== */
+/* Responsive Styles with Service Image Fixes */
+/* =========================================== */
 @media (max-width: 992px) {
     .footer-content {
         grid-template-columns: repeat(2, 1fr);
@@ -1051,8 +1097,7 @@ section {
     }
 
     .logo-text h1 {
-      font-size: 1rem;
-      
+        font-size: 1rem;
     }
 }
 
@@ -1122,6 +1167,19 @@ section {
     .testimonial-slider {
         height: 350px;
     }
+    
+    /* Service Image Responsive Fixes */
+    .service-icon {
+        height: 160px !important;
+    }
+    
+    .service-icon img {
+        transform: scale(1.1) !important;
+    }
+    
+    .service-card-content {
+        padding: 20px !important;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1149,5 +1207,22 @@ section {
     .btn {
         width: 100%;
         text-align: center;
+    }
+    
+    /* Service Image Small Screen Fixes */
+    .service-icon {
+        height: 140px !important;
+    }
+    
+    .service-icon img {
+        transform: scale(1.05) !important;
+    }
+    
+    .service-card-content {
+        padding: 15px !important;
+    }
+    
+    .service-card h3 {
+        font-size: 1.2rem !important;
     }
 }
